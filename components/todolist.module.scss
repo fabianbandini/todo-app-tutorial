@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+
+  form {
+    display: flex;
+    column-gap: 2em;
+
+    input {
+      background: #2C2E33;
+      border: none;
+      height: 40px;
+      width: 250px;
+      border-radius: 10px;
+      color: white;
+      padding-left: 1em;
+    }
+
+    input:focus {
+      outline: 2px solid #47428E;
+    }
+
+    button {
+      width: 100px;
+      border: none;
+      background: #47428E;
+      border-radius: 10px;
+      color: white;
+    }
+
+    button:hover {
+      transition: 0.3s;
+      background: #3f3a7c;
+    }
+  }
+
+  .todos {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+  }
+}

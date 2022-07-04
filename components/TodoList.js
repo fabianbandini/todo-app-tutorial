@@ -1,22 +1,10 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import TodoItem from "./TodoItem";
-import {Cookies} from "next/dist/server/web/spec-extension/cookies";
-import {getCookies} from "cookies-next";
+import styles from "./todolist.module.scss";
 
 export default function TodoList() {
     const [todos, setTodos] = useState([]);
     const [currentInput, setCurrentInput] = useState("");
-    const cookies = new Cookies();
-
-    useEffect(() => {
-        let _todos = cookies.get("todos");
-        if (_todos !== undefined){
-            setTodos(JSON.parse(_todos));
-            return;
-        }
-
-        setTodos([]);
-    }, [])
 
     const handleClickAdd = (e) => {
         e.preventDefault();
@@ -33,23 +21,23 @@ export default function TodoList() {
 
         setTodos([newTodo, ...todos]);
         setCurrentInput("")
-        cookies.set("todos", JSON.stringify(todos), {path: '/'});
+
     }
 
     const handleClickRemove = (id) => {
         const filteredTodos = todos.filter(todo => todo.id !== id);
         setTodos(filteredTodos);
-        cookies.set("todos", JSON.stringify(todos));
     }
 
     return (
-        <div>
+        <div className={styles.container}>
             <form onSubmit={(e) => handleClickAdd(e)}>
                 <input onChange={(e) =>
-                    setCurrentInput(e.target.value)} value={currentInput}/>
+                    setCurrentInput(e.target.value)} value={currentInput}
+                    placeholder={"todo..."}/>
                 <button type={"submit"}>add</button>
             </form>
-            <div>
+            <div className={styles.todos}>
                 {
                     todos.map(todo => {
                         return (

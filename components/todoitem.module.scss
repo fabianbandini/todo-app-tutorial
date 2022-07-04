@@ -1,0 +1,22 @@
+.container {
+  background: #2C2E33;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 1em 0.5em 1em;
+  align-items: center;
+
+  h2 {
+    color: white;
+    font-size: 20px;
+    font-weight: lighter;
+  }
+
+  button {
+    background: #ce6767;
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 10px;
+  }
+}

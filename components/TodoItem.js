@@ -1,5 +1,6 @@
 import {useState} from "react";
 import Image from "next/image";
+import styles from "./todoitem.module.scss";
 
 export default function TodoItem({title, id, handleClickRemove}) {
     const [done, setIsDone] = useState(false);
@@ -9,7 +10,7 @@ export default function TodoItem({title, id, handleClickRemove}) {
     }
 
     return (
-        <div onClick={markDone}>
+        <div onClick={markDone} className={styles.container}>
             <h2>{title}</h2>
             <button onClick={() => handleClickRemove(id)}><Image src={"/trashicon.svg"} width={20} height={20}/>
             </button>
