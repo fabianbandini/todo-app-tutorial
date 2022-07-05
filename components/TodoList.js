@@ -19,7 +19,10 @@ export default function TodoList() {
             content: currentInput
         }
 
-        setTodos([newTodo, ...todos]);
+        let _todos = todos;
+        _todos.push(newTodo);
+
+        setTodos(_todos)
         setCurrentInput("")
 
     }
