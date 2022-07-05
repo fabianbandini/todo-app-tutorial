@@ -10,7 +10,7 @@ export default function TodoItem({title, id, handleClickRemove}) {
     }
 
     return (
-        <div onClick={markDone} className={styles.container}>
+        <div onClick={markDone} className={done? styles.container : styles.doneContainer}>
             <h2>{title}</h2>
             <button onClick={() => handleClickRemove(id)}><Image src={"/trashicon.svg"} width={20} height={20}/>
             </button>

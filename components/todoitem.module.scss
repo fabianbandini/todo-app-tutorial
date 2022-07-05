@@ -20,3 +20,23 @@
     border-radius: 10px;
   }
 }
+
+.doneContainer {
+  background: #535761;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 1em 0.5em 1em;
+  align-items: center;
+
+  h2 {
+    color: #2b2d31;
+    text-decoration: line-through;
+    font-size: 20px;
+    font-weight: lighter;
+  }
+
+  button {
+    display:none;
+  }
+}
